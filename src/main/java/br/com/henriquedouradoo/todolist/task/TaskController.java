@@ -6,7 +6,7 @@ import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -73,6 +73,6 @@ public class TaskController {
 
         Utils.copyNonNullProperties(taskModel, task);
         var taskUpdated = this.taskRepository.save(task);
-        return ResponseEntity.ok().body(this.taskRepository.save(taskUpdated));
+        return ResponseEntity.ok().body(taskUpdated);
     }
 }
